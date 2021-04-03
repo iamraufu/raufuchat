@@ -4,7 +4,7 @@ import Peer from 'simple-peer';
 
 const SocketContext = createContext();
 
-const socket = io('http://localhost:5000')
+const socket = io('https://raufuchat.herokuapp.com/')
 
 const ContextProvider = ({ children }) => {
       const [stream, setStream] = useState(null)
@@ -79,7 +79,7 @@ const ContextProvider = ({ children }) => {
       }
 
       return (
-            <SocketContext.Provider value={{ call, callAccepted, myVideo, userVideo, stream, name, setName, callEnded, me, callUser,leaveCall, answerCall, }}>
+            <SocketContext.Provider value={{ call, callAccepted, myVideo, userVideo, stream, name, setName, callEnded, me, callUser, leaveCall, answerCall, }}>
                   {children}
             </SocketContext.Provider>
       )
